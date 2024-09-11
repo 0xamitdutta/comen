@@ -27,7 +27,7 @@ export function Example() {
 import Image from 'next/image';
 
 const images = [
-    "/assets/profile-pictures/person1.jpg?height=400&width=400",
+    "/assets/profile-pictures/person1.jpg?height=500&width=400",
     "/assets/profile-pictures/person2.jpg?height=400&width=400",
     "/assets/profile-pictures/person3.jpg?height=400&width=400"
 ];
@@ -45,7 +45,7 @@ const ProfileCardCarousel = () => {
                         <div className="p-1">
                             <Card className="border-0 shadow-none">
                                 <CardContent className="flex aspect-square items-center justify-center p-0">
-                                    <div className="relative w-full h-[400px] w-[400px]">
+                                    <div className="relative h-[400px] w-[400px]">
                                         <Image
                                             src={src}
                                             alt={`Profile Picture ${index + 1}`}
