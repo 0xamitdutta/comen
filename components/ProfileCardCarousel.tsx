@@ -33,7 +33,6 @@ const images = [
 ];
 
 const ProfileCardCarousel = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
     const plugin = useRef(
         Autoplay({ delay: 2000, stopOnInteraction: true })
     )
