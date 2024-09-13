@@ -11,7 +11,7 @@ const Hero = () => {
     };
 
     return (
-        <section className="py-12">
+        <section className="py-12 mb-24">
             <div className="container mx-auto px-8 flex flex-col lg:flex-row items-center justify-between">
                 {/* Left Section */}
                 <div className="text-center lg:text-left max-w-lg">

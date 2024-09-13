@@ -36,7 +36,7 @@ const InfiniteCollegeCarousel = () => {
     }, []);
 
     return (
-        <div ref={scrollRef} className='scroller container mx-auto px-4 py-8 border '>
+        <div ref={scrollRef} className='scroller container mx-auto px-4 py-8 border mb-12'>
             <div className='scroll_inner flex flex-wrap gap-4 py-4 animate-infinite_scroll'>
                 {
                     images.map((src, index) => (

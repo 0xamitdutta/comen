@@ -79,3 +79,7 @@
   width: max-content;
   flex-wrap: nowrap;
 }
+
+.scroll_inner:hover {
+  animation-play-state: paused;
+}
