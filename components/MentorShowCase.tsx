@@ -58,24 +58,32 @@ const MentorCard = ({ mentor }: { mentor: Mentor }) => (
 const MentorShowcase = ({ mentors }: { mentors: Mentor[] }) => {
     const mentorsData = getMentors();
     return (
-        <Carousel
-            opts={{
-                align: "start",
-            }}
-            className="container mx-auto px-4 py-8"
-        >
-            <CarouselContent>
-                {mentors.map((mentor, index) => (
-                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
-                        <div className="p-1">
-                            <MentorCard mentor={mentor} />
-                        </div>
-                    </CarouselItem>
-                ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-        </Carousel>
+        <div className="flex flex-col items-center justify-center">
+            <div className="container flex justify-between items-center px-4 pt-8">
+                <h1 className="text-3xl font-bold text-center mb-8">
+                    Find Top College Mentors
+                </h1>
+                <Button>Discover More</Button>
+            </div>
+            <Carousel
+                opts={{
+                    align: "start",
+                }}
+                className="container mx-auto px-4 py-8"
+            >
+                <CarouselContent>
+                    {mentors.map((mentor, index) => (
+                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
+                            <div className="p-1">
+                                <MentorCard mentor={mentor} />
+                            </div>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+            </Carousel>
+        </div>
     );
 };
 
