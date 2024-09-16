@@ -9,6 +9,7 @@ import Stats from "@/components/Stats";
 import MentorReview from "@/components/MentorReview";
 import categories from "@/constants/categories";
 import reviews from "@/constants/reviews";
+import BecomeMentor from "@/components/BecomeMentor";
 
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <SignupComponent />
         <Stats />
         <MentorReview categories={categories} reviews={reviews} />
+        <BecomeMentor />
       </>
   );
 }

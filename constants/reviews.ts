@@ -13,7 +13,7 @@ const mentorsReviews = [
     },
     {
         name: "Isha Marry",
-        image: "//assets/profile-pictures/person3.jpg",
+        image: "/assets/profile-pictures/person3.jpg",
         year: "3th Year, IIT Bhubaneshwar",
         course: "Computer Science Engineering",
         sessions: "105+ sessions (38 reviews)",
@@ -25,7 +25,7 @@ const mentorsReviews = [
     },
     {
         name: "Rohan Shetty",
-        image: "/assets/profile-pictures/person3.jpg",
+        image: "/assets/profile-pictures/person2.jpg",
         year: "4th Year, IIT Bombay",
         course: "Computer Science Engineering",
         sessions: "150+ sessions (57 reviews)",

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import {
     Card,
     CardContent,
+    CardFooter,
     CardHeader,
     CardTitle
 } from "@/components/ui/card";
@@ -49,8 +50,9 @@ const MentorCard = ({ review }: { review: MentorReview }) => (
             </div>
         </CardHeader>
         <CardContent className="p-6">
-
             <p className="text-sm mb-4">"{review.review}"</p>
+        </CardContent>
+        <CardFooter>
             <div className="flex items-center">
                 <Avatar className="h-8 w-8 mr-2">
                     <AvatarImage src="/api/placeholder/32/32" alt={review.reviewer.name} />
@@ -61,7 +63,7 @@ const MentorCard = ({ review }: { review: MentorReview }) => (
                     <p className="text-xs text-gray-500">{review.reviewer.school}</p>
                 </div>
             </div>
-        </CardContent>
+        </CardFooter>
     </Card>
 );
 
