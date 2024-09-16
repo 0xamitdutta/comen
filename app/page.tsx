@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import InfiniteCollegeCarousel from "@/components/InfiniteCollegeCarousel";
 import MentorShowcase from "@/components/MentorShowCase";
 import Navbar from "@/components/Navbar";
+import SignupComponent from "@/components/JoinNow";
 import mentors from "@/constants/mentors";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <InfiniteCollegeCarousel />
         <CollegeSuccessPath />
         <MentorShowcase mentors={mentors}/>
+        <SignupComponent />
       </>
   );
 }

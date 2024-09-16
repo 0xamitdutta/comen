@@ -58,7 +58,7 @@ const MentorCard = ({ mentor }: { mentor: Mentor }) => (
 const MentorShowcase = ({ mentors }: { mentors: Mentor[] }) => {
     const mentorsData = getMentors();
     return (
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center mb-24">
             <div className="container flex justify-between items-center px-4 pt-8">
                 <h1 className="text-3xl font-bold text-center mb-8">
                     Find Top College Mentors
