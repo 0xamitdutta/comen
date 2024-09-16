@@ -6,12 +6,12 @@ import { Button } from './ui/button'
 const Hero = () => {
     const [activeTab, setActiveTab] = useState('mentee');
 
-    const handleTabClick = (tab) => {
+    const handleTabClick = (tab: string) => {
         setActiveTab(tab);
     };
 
     return (
-        <section className="py-12">
+        <section className="py-12 mb-24">
             <div className="container mx-auto px-8 flex flex-col lg:flex-row items-center justify-between">
                 {/* Left Section */}
                 <div className="text-center lg:text-left max-w-lg">
@@ -66,19 +66,17 @@ const Hero = () => {
                                     Guide Aspiring Students and Shape Future Leaders!
                                 </p>
                                 <div className="relative max-w-md">
-                                    <Button className="w-full py-5 px-4 border rounded-full border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <Button className="w-full py-6 px-4 border rounded-full border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                         Search
                                     </Button>
                                 </div>
                             </>
                         )
-
                     }
-
                 </div>
 
                 {/* Right Section */}
-                <div className="mt-12 lg:mt-0 w-full flex flex-row-reverse">
+                <div className="mt-12 lg:mt-0 ">
                     <ProfileCardCarousel />
                 </div>
             </div>
