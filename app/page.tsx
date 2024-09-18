@@ -11,6 +11,7 @@ import categories from "@/constants/categories";
 import reviews from "@/constants/reviews";
 import BecomeMentor from "@/components/BecomeMentor";
 import Faq from "@/components/Faq";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
         <MentorReview categories={categories} reviews={reviews} />
         <BecomeMentor />
         <Faq />
+        <Footer />
       </>
   );
 }
