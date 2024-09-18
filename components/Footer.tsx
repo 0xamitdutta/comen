@@ -23,7 +23,7 @@ const Footer = () => {
                         </ul>
                     </nav>
                 </div>
-                <div className="flex justify-end space-x-6 mb-4 md:mb-0">
+                <div className="flex sm:justify-center md:justify-end space-x-6 mb-4 md:mb-0">
                     <Link href="#" className="text-blue-700 hover:text-blue-800"><Linkedin size={24} /></Link>
                     <Link href="#" className="text-gray-800 hover:text-gray-900"><Twitter size={24} /></Link>
                     <Link href="#" className="text-pink-600 hover:text-pink-700"><Instagram size={24} /></Link>
