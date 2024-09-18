@@ -11,7 +11,7 @@ const SignupComponent = () => {
     };
 
     return (
-        <div className="container mx-auto p-6 bg-white rounded-lg shadow-md">
+        <div className="container mx-auto p-6 rounded-lg mb-24">
             <h1 className="text-3xl font-bold text-center mb-4">
                 Start your first meeting for free in less than a minute!
             </h1>

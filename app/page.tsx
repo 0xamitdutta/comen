@@ -5,6 +5,14 @@ import MentorShowcase from "@/components/MentorShowCase";
 import Navbar from "@/components/Navbar";
 import SignupComponent from "@/components/JoinNow";
 import mentors from "@/constants/mentors";
+import Stats from "@/components/Stats";
+import MentorReview from "@/components/MentorReview";
+import categories from "@/constants/categories";
+import reviews from "@/constants/reviews";
+import BecomeMentor from "@/components/BecomeMentor";
+import Faq from "@/components/Faq";
+import Footer from "@/components/Footer";
+
 
 export default function Home() {
   return (
@@ -15,6 +23,11 @@ export default function Home() {
         <CollegeSuccessPath />
         <MentorShowcase mentors={mentors}/>
         <SignupComponent />
+        <Stats />
+        <MentorReview categories={categories} reviews={reviews} />
+        <BecomeMentor />
+        <Faq />
+        <Footer />
       </>
   );
 }

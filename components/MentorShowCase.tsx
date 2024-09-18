@@ -24,10 +24,6 @@ interface Mentor {
     imageUrl: string;
 }
 
-interface MentorShowcaseProps {
-    mentors: Mentor[];
-}
-
 async function getMentors(): Promise<Mentor[]> {
     const result = await fetch("/api/mentors");
     return result.json();
