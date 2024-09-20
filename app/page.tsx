@@ -1,3 +1,4 @@
+
 import CollegeSuccessPath from "@/components/CollegeSuccessPath";
 import Hero from "@/components/Hero";
 import InfiniteCollegeCarousel from "@/components/InfiniteCollegeCarousel";

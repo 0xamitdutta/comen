@@ -1,7 +1,7 @@
 import AuthLayout from "@/components/Authlayout";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import ".././globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <link rel="icon" href="/assets/favicon.ico" />
       <body className={inter.className}>
+        <AuthLayout>
           {children}
+        </AuthLayout>
       </body>
     </html>
   );

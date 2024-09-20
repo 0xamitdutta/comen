@@ -1,11 +1,42 @@
+"use client"
+
 import React from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ChevronLeft } from 'lucide-react';
+import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { auth } from '@/lib/firebase';
+import { useRouter } from 'next/navigation';
 
 const LoginComponent = () => {
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const router = useRouter();
+
+  const handleSignUp = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      router.push('/dashboard');
+    } catch (error) {
+      console.error('Error signing up', error);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      router.push('/dashboard');
+    } catch (error) {
+      console.error('Error signing in with Google', error);
+    }
+  };
+  
   return (
     <div className="flex h-screen p-12">
       <div className="container mx-auto flex">
@@ -15,10 +46,10 @@ const LoginComponent = () => {
             Back
           </Link>
           <h1 className="text-3xl font-bold mb-2">Your Gateway to Personalized College Guidance!</h1>
-          <h2 className="text-2xl font-bold mb-2">Log in</h2>
-          <p className="text-gray-500 mb-6">Please login to continue to your account.</p>
+          <h2 className="text-2xl font-bold mb-2">Sign Up</h2>
+          <p className="text-gray-500 mb-6">Please Sign up to continue to your account.</p>
           
-          <Button variant="outline" className="w-full mb-4 flex items-center justify-center">
+          <Button variant="outline" className="w-full mb-4 flex items-center justify-center" onClick={handleGoogleLogin}>
             <Image src="/api/placeholder/20/20" alt="Google logo" width={20} height={20} className="mr-2" />
             Continue with Google
           </Button>
@@ -29,11 +60,23 @@ const LoginComponent = () => {
             <div className="flex-grow border-t border-gray-300"></div>
           </div>
           
-          <form>
+          <form onSubmit={handleSignUp}>
             <div className="space-y-4">
-              <Input type="email" placeholder="Email Address" />
-              <Input type="password" placeholder="Password" />
-              <Button className="w-full">Sign Up</Button>
+              <Input 
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                required
+              />
+              <Input 
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                required
+              />
+              <Button type="submit" className="w-full">Sign Up</Button>
             </div>
           </form>
           
