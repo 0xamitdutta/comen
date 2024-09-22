@@ -18,8 +18,8 @@ const Navbar = () => {
             <li><a href="">FAQs</a></li>
           </ul>
           <div className="hidden lg:flex justify-center items-center space-x-12">
-            <Link href={"#"} className={buttonVariants({ variant: "outline" })}>Log In</Link>
-            <Link href={"#"} className={buttonVariants({ variant: "default" })}>Sign Up</Link>
+            <Link href={"/auth/login"} className={buttonVariants({ variant: "outline" })}>Log In</Link>
+            <Link href={"/auth/signup"} className={buttonVariants({ variant: "default" })}>Sign Up</Link>
           </div>
         </div>
       </div>
