@@ -1,9 +1,15 @@
+"use client"
+
+
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button"
+import { useFirebaseAuth } from '@/hooks/useFirebaseAuth';
+import LogoutButton from './LogoutButton';
 
 
 const Navbar = () => {
+  const { user } = useFirebaseAuth();
   return (
     <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-200">
       <div className="container px-8 mx-auto relative lg:text-md">
@@ -18,8 +24,17 @@ const Navbar = () => {
             <li><a href="">FAQs</a></li>
           </ul>
           <div className="hidden lg:flex justify-center items-center space-x-12">
-            <Link href={"/auth/login"} className={buttonVariants({ variant: "outline" })}>Log In</Link>
-            <Link href={"/auth/signup"} className={buttonVariants({ variant: "default" })}>Sign Up</Link>
+            {user ? (
+              <>
+                <span>Hi, {user.displayName || user.email}</span>
+                <LogoutButton />
+              </>
+            ) : (
+              <>
+                <Link href="/auth/login" className={buttonVariants({ variant: "outline" })}>Log In</Link>
+                <Link href="/auth/signup" className={buttonVariants({ variant: "default" })}>Sign Up</Link>
+              </>
+            )}
           </div>
         </div>
       </div>
