@@ -50,7 +50,7 @@ const LoginComponent = () => {
           <p className="text-gray-500 mb-6">Please Sign up to continue to your account.</p>
           
           <Button variant="outline" className="w-full mb-4 flex items-center justify-center" onClick={handleGoogleLogin}>
-            <Image src="/api/placeholder/20/20" alt="Google logo" width={20} height={20} className="mr-2" />
+            <Image src="/assets/google_logo.jpg" alt="Google logo" width={20} height={20} className="mr-2" />
             Continue with Google
           </Button>
           
