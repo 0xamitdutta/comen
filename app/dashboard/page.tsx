@@ -1,9 +1,13 @@
-import React from 'react'
+"use client"
+import { useFirebaseAuth } from '@/hooks/useFirebaseAuth';
+import LogoutButton from '@/components/LogoutButton';
 
-const Dashboard = () => {
+export default function DashboardPage() {
+  const { user } = useFirebaseAuth();
+
   return (
-    <div>Dashboard</div>
-  )
+    <div>
+      
+    </div>
+  );
 }
-
-export default Dashboard
