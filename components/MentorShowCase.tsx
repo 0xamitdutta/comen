@@ -51,7 +51,7 @@ const MentorCard = ({ mentor }: { mentor: Mentor }) => (
     </Card>
 );
 
-const MentorShowcase = ({ mentors }: { mentors: Mentor[] }) => {
+const MentorShowcase = ({ mentors, number }: { mentors: Mentor[], number: number }) => {
     const mentorsData = getMentors();
     return (
         <div className="flex flex-col items-center justify-center mb-24">
@@ -69,7 +69,7 @@ const MentorShowcase = ({ mentors }: { mentors: Mentor[] }) => {
             >
                 <CarouselContent>
                     {mentors.map((mentor, index) => (
-                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
+                        <CarouselItem key={index} className={`md:basis-1/2 lg:basis-1/${number}`}>
                             <div className="p-1">
                                 <MentorCard mentor={mentor} />
                             </div>

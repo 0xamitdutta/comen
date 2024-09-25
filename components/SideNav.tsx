@@ -7,12 +7,9 @@ import { Home, Search, MessageCircle, Calendar, Users, Edit } from 'lucide-react
 import path from 'path'
 
 const navItems = [
-  { name: 'Home', href: '/', icon: Home },
+  { name: 'Home', href: '/dashboard/profile', icon: Home },
   { name: 'Find Mentor', href: '/dashboard/searchMentors', icon: Search },
-  { name: 'Messages', href: '/messages', icon: MessageCircle },
   { name: 'Bookings', href: '/bookings', icon: Calendar },
-  { name: 'Community', href: '/community', icon: Users },
-  { name: 'Blogs', href: '/blogs', icon: Edit },
 ]
 
 export default function SideNav() {
@@ -26,8 +23,8 @@ export default function SideNav() {
       <ul className="flex-1 space-y-6">
         {navItems.map((item) => (
           <li key={item.name}>
-            <Link href={item.href} 
-              className={`flex flex-col items-center justify-center text-center w-lvw h-16 text-gray-500 hover:text-blue-500 ${item.href === "/dashboard/searchMentors" ? 'bg-red-50' : 'text-gray-500'}`}
+            <Link href={item.href}
+              className="flex flex-col items-center justify-center text-center w-lvw h-16 text-gray-500 hover:text-blue-500"
             >
               <item.icon size={24} />
               <span className="text-xs mt-1">{item.name}</span>
