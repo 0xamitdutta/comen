@@ -13,6 +13,8 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import { GraduationCap, MessageSquare } from "lucide-react";
+import MentorCard from "@/components/MentorCard"
+
 
 interface Mentor {
     name: string;
