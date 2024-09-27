@@ -24,11 +24,6 @@ interface Mentor {
     imageUrl: string;
 }
 
-async function getMentors(): Promise<Mentor[]> {
-    const result = await fetch("/api/mentors");
-    return result.json();
-}
-
 const MentorCard = ({ mentor }: { mentor: Mentor }) => (
     <Card className="shadow-lg">
         <CardHeader className="p-0">
@@ -52,7 +47,6 @@ const MentorCard = ({ mentor }: { mentor: Mentor }) => (
 );
 
 const MentorShowcase = ({ mentors, number }: { mentors: Mentor[], number: number }) => {
-    const mentorsData = getMentors();
     return (
         <div className="flex flex-col items-center justify-center mb-24">
             <div className="container flex justify-between items-center px-4 pt-8">
