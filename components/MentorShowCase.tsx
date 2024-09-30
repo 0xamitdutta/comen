@@ -13,7 +13,7 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import { GraduationCap, MessageSquare } from "lucide-react";
-import MentorCard from "@/components/MentorCard"
+import MentorCard from "@/components/MentorCard";
 
 
 interface Mentor {
@@ -26,8 +26,7 @@ interface Mentor {
     imageUrl: string;
 }
 
-const MentorShowcase = ({ mentors }: { mentors: Mentor[] }) => {
-    // const mentorsData = getMentors();
+const MentorShowcase = ({ mentors, number }: { mentors: Mentor[], number: number }) => {
     return (
         <div className="flex flex-col items-center justify-center mb-24">
             <div className="container flex justify-between items-center px-4 pt-8">
@@ -44,7 +43,7 @@ const MentorShowcase = ({ mentors }: { mentors: Mentor[] }) => {
             >
                 <CarouselContent>
                     {mentors.map((mentor, index) => (
-                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
+                        <CarouselItem key={index} className={`md:basis-1/2 lg:basis-1/${number}`}>
                             <div className="p-1">
                                 <MentorCard mentor={mentor} />
                             </div>

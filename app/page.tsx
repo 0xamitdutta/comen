@@ -22,7 +22,7 @@ export default function Home() {
         <Hero />
         <InfiniteCollegeCarousel />
         <CollegeSuccessPath />
-        <MentorShowcase mentors={mentors}/>
+        <MentorShowcase mentors={mentors} number={3}/>
         <SignupComponent />
         <Stats />
         <MentorReview categories={categories} reviews={reviews} />
