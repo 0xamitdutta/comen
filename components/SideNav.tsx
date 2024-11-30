@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Home, User, Search, MessageCircle, Calendar, Users, Edit } from 'lucide-react'
 import path from 'path'
+import { useFirebaseAuth } from '@/hooks/useFirebaseAuth'
 
 const navItems = [
   { name: 'Profile', href: '/dashboard/profile', icon: User },
@@ -17,9 +18,10 @@ const navItems = [
 
 export default function SideNav() {
   const pathname = usePathname()
+  const{user, loading} = useFirebaseAuth();
   console.log(pathname)
   return (
-    <nav className="bg-blue-50 w-32 min-h-screen flex flex-col items-center py-8">
+      (user) && (<nav className="bg-blue-50 w-32 min-h-screen flex flex-col items-center py-8">
       <div className="mb-8">
         <Image src="/assets/logo.png" alt="COMEN Logo" width={50} height={50} className="rounded-full" />
       </div>
@@ -35,6 +37,6 @@ export default function SideNav() {
           </li>
         ))}
       </ul>
-    </nav>
+    </nav>)
   )
 }
