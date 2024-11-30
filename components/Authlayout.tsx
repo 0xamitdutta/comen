@@ -14,9 +14,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
     if (!loading) {
       if (!user && !pathname.startsWith('/auth')) {
         router.push('/auth/login');
-      } else if (user && pathname.startsWith('/auth')) {
-        router.push('/dashboard');
-      }
+      } 
     }
   }, [user, loading, pathname, router]);
 

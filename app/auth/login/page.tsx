@@ -21,7 +21,7 @@ const LoginComponent = () => {
       e.preventDefault();
       try {
         await signInWithEmailAndPassword(auth, email, password);
-        router.push('/dashboard');
+        router.push('/dashboard/profile');
       } catch (error) {
         console.error('Error signing in with email and password', error);
       }
@@ -31,7 +31,7 @@ const LoginComponent = () => {
       const provider = new GoogleAuthProvider();
       try {
         await signInWithPopup(auth, provider);
-        router.push('/dashboard');
+        router.push('/dashboard/profile');
       } catch (error) {
         console.error('Error signing in with Google', error);
       }
