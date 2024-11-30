@@ -11,8 +11,8 @@ import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } f
 import { auth } from '@/lib/firebase';
 import { useRouter } from 'next/navigation';
 
-const LoginComponent = () => {
-  
+const SignupComponent = () => {
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
@@ -36,7 +36,7 @@ const LoginComponent = () => {
       console.error('Error signing in with Google', error);
     }
   };
-  
+
   return (
     <div className="flex h-screen p-12">
       <div className="container mx-auto flex">
@@ -48,28 +48,28 @@ const LoginComponent = () => {
           <h1 className="text-3xl font-bold mb-2">Your Gateway to Personalized College Guidance!</h1>
           <h2 className="text-2xl font-bold mb-2">Sign Up</h2>
           <p className="text-gray-500 mb-6">Please Sign up to continue to your account.</p>
-          
+
           <Button variant="outline" className="w-full mb-4 flex items-center justify-center" onClick={handleGoogleLogin}>
             <Image src="/assets/google_logo.jpg" alt="Google logo" width={20} height={20} className="mr-2" />
             Continue with Google
           </Button>
-          
+
           <div className="flex items-center my-4">
             <div className="flex-grow border-t border-gray-300"></div>
             <span className="flex-shrink mx-4 text-gray-500">or</span>
             <div className="flex-grow border-t border-gray-300"></div>
           </div>
-          
+
           <form onSubmit={handleSignUp}>
             <div className="space-y-4">
-              <Input 
+              <Input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
                 required
               />
-              <Input 
+              <Input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -79,18 +79,18 @@ const LoginComponent = () => {
               <Button type="submit" className="w-full">Sign Up</Button>
             </div>
           </form>
-          
+
           <div className="mt-4 text-center">
             <Link href="/forgot-password" className="text-blue-500 hover:underline">
               Forgot Password?
             </Link>
           </div>
-          
+
           <div className="mt-6 text-center text-gray-500">
             Need an account? <Link href="/signup" className="text-blue-500 hover:underline">Create one</Link>
           </div>
         </div>
-        
+
         <div className="hidden md:block flex-1">
           <Image
             src="/assets/graduation.jpg"
@@ -105,4 +105,4 @@ const LoginComponent = () => {
   );
 };
 
-export default LoginComponent;
+export default SignupComponent;

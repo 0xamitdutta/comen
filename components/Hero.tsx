@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import ProfileCardCarousel from './ProfileCardCarousel'
-import { Button } from './ui/button'
+import { Button } from "@/components/ui/button";
 
 const Hero = () => {
     const [activeTab, setActiveTab] = useState('mentee');
