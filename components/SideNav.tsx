@@ -18,17 +18,20 @@ const navItems = [
 
 export default function SideNav() {
   const pathname = usePathname()
-  const{user, loading} = useFirebaseAuth();
+  const { user, loading } = useFirebaseAuth();
   console.log(pathname)
   return (
-      (user) && (<nav className="bg-blue-50 w-32 min-h-screen flex flex-col items-center py-8">
+    (user) && (<nav className="bg-blue-50 w-32 min-h-screen flex flex-col items-center py-8">
       <div className="mb-8">
-        <Image src="/assets/logo.png" alt="COMEN Logo" width={50} height={50} className="rounded-full" />
+        <Link href="/">
+          <Image src="/assets/logo.png" alt="COMEN Logo" width={50} height={50} className="rounded-full" />
+        </Link>
+
       </div>
       <ul className="flex-1 w-full space-y-6">
         {navItems.map((item) => (
           <li key={item.name}>
-            <Link href={item.href} 
+            <Link href={item.href}
               className={`flex flex-col items-center justify-center text-center w-full h-16 text-gray-500 hover:text-blue-500 ${item.href === pathname ? 'bg-white' : 'text-gray-500'}`}
             >
               <item.icon size={24} />

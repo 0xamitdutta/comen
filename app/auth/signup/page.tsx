@@ -1,6 +1,4 @@
 "use client"
-
-import React from 'react';
 import { useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -155,7 +153,7 @@ const SignupComponent = () => {
       await createUserDocument(userCredential, name, photoURL);
       
       console.log('User created successfully');
-      router.push('/dashboard/profile');
+      router.push('/complete-profile');
     } catch (error: any) {
       console.error('Error in signup process:', error);
       
@@ -182,7 +180,7 @@ const SignupComponent = () => {
       const userCredential = await signInWithPopup(auth, provider);
       await createUserDocument(userCredential);
       console.log('Google sign-in successful');
-      router.push('/dashboard/profile');
+      router.push('/auth/signup/complete-profile');
     } catch (error: any) {
       console.error('Error in Google sign-in:', error);
       if (error.code === 'permission-denied') {
@@ -202,7 +200,7 @@ const SignupComponent = () => {
       fileInputRef.current.value = '';
     }
   };
-  
+
   return (
     <div className="flex h-screen p-12">
       <div className="container mx-auto flex">
@@ -230,13 +228,13 @@ const SignupComponent = () => {
             <Image src="/assets/google_logo.jpg" alt="Google logo" width={20} height={20} className="mr-2" />
             Continue with Google
           </Button>
-          
+
           <div className="flex items-center my-4">
             <div className="flex-grow border-t border-gray-300"></div>
             <span className="flex-shrink mx-4 text-gray-500">or</span>
             <div className="flex-grow border-t border-gray-300"></div>
           </div>
-          
+
           <form onSubmit={handleSignUp}>
             <div className="space-y-4">
               <Input 
@@ -255,7 +253,7 @@ const SignupComponent = () => {
                 required
                 disabled={isLoading}
               />
-              <Input 
+              <Input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -315,18 +313,18 @@ const SignupComponent = () => {
               </Button>
             </div>
           </form>
-          
+
           <div className="mt-4 text-center">
             <Link href="/forgot-password" className="text-blue-500 hover:underline">
               Forgot Password?
             </Link>
           </div>
-          
+
           <div className="mt-6 text-center text-gray-500">
             Already have an account? <Link href="/login" className="text-blue-500 hover:underline">Log in</Link>
           </div>
         </div>
-        
+
         <div className="hidden md:block flex-1">
           <Image
             src="/assets/graduation.jpg"
