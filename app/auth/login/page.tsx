@@ -1,5 +1,4 @@
 "use client"
-
 import React from 'react';
 import { useState } from 'react';
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
@@ -85,7 +84,7 @@ const LoginComponent = () => {
           </div>
           
           <div className="mt-6 text-center text-gray-500">
-            Need an account? <Link href="/signup" className="text-blue-500 hover:underline">Create one</Link>
+            Need an account? <Link href="/auth/signup" className="text-blue-500 hover:underline">Create one</Link>
           </div>
         </div>
         

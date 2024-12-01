@@ -1,6 +1,4 @@
 "use client"
-
-import React from 'react';
 import { useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -155,7 +153,7 @@ const SignupComponent = () => {
       await createUserDocument(userCredential, name, photoURL);
       
       console.log('User created successfully');
-      router.push('/dashboard/profile');
+      router.push('/complete-profile');
     } catch (error: any) {
       console.error('Error in signup process:', error);
       
@@ -182,7 +180,7 @@ const SignupComponent = () => {
       const userCredential = await signInWithPopup(auth, provider);
       await createUserDocument(userCredential);
       console.log('Google sign-in successful');
-      router.push('/dashboard/profile');
+      router.push('/auth/signup/complete-profile');
     } catch (error: any) {
       console.error('Error in Google sign-in:', error);
       if (error.code === 'permission-denied') {
