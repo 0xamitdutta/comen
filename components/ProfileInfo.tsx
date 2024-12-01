@@ -6,7 +6,7 @@ import mentors from "@/constants/mentors";
 
 const ProfileInfo = () => {
     return (
-        <div className="w-3/5 space-y-4">
+        <div className="w-3/5 space-y-4 mx-8 px-8">
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-2xl font-bold">About</CardTitle>
@@ -43,8 +43,8 @@ const ProfileInfo = () => {
                     </div>
                 </CardContent>
             </Card>
-            <MentorShowcase mentors={mentors} number={3} />
         </div>
+        
     );
 };
 

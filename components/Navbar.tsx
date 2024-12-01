@@ -57,10 +57,10 @@ const Navbar = () => {
             <Image src="/assets/logo.png" alt="Logo" height={50} width={50} className="mr-2" />
           </div>
           <ul className="hidden lg:flex space-x-12">
-            <li><a href="">Get Started</a></li>
-            <li><a href="">Find Mentors</a></li>
-            <li><a href="">Testimonials</a></li>
-            <li><a href="">FAQs</a></li>
+            <li><a href="#get-started">Get Started</a></li>
+            <li><a href="#find-mentors">Find Mentors</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faqs">FAQs</a></li>
           </ul>
           <div className="hidden lg:flex justify-center items-center space-x-6">
             {user ? (

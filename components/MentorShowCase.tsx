@@ -26,9 +26,9 @@ interface Mentor {
     imageUrl: string;
 }
 
-const MentorShowcase = ({ mentors, number }: { mentors: Mentor[], number: number }) => {
+const MentorShowcase = ({ mentors }: { mentors: Mentor[]}) => {
     return (
-        <div className="flex flex-col items-center justify-center mb-24">
+        <div className="flex flex-col items-center justify-center mb-24" id="find-mentors">
             <div className="container flex justify-between items-center px-4 pt-8">
                 <h1 className="text-3xl font-bold text-center mb-8">
                     Find Top College Mentors
@@ -43,7 +43,7 @@ const MentorShowcase = ({ mentors, number }: { mentors: Mentor[], number: number
             >
                 <CarouselContent>
                     {mentors.map((mentor, index) => (
-                        <CarouselItem key={index} className={`md:basis-1/2 lg:basis-1/${number}`}>
+                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
                             <div className="p-1">
                                 <MentorCard mentor={mentor} />
                             </div>
