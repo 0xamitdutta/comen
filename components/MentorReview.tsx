@@ -69,7 +69,7 @@ const MentorCard = ({ review }: { review: MentorReview }) => (
 
 const MentorReview = ({ reviews, categories }: { reviews: MentorReview[], categories: string[] }) => {
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-8" id="testimonials">
             <h1 className="text-3xl font-bold text-center mb-6">We value your opinion</h1>
 
             <div className="flex flex-wrap justify-center gap-2 mb-8">
