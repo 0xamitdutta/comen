@@ -4,7 +4,7 @@ import ProfileInfo from "@/components/ProfileInfo"
 import ProfileProgress from "@/components/ProfileProgress"
 import mentors from "@/constants/mentors";
 
-const Profile = () => {
+const MenteeProfile = () => {
     return (
         <div>
             <ProfileHeader />
@@ -19,4 +19,4 @@ const Profile = () => {
     )
 }
 
-export default Profile
+export default MenteeProfile
