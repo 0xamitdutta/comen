@@ -23,14 +23,14 @@ const UserDetailsComponent = () => {
     const [menteeFirstName, setMenteeFirstName] = useState('');
     const [menteeLastName, setMenteeLastName] = useState('');
     const [studentType, setStudentType] = useState('');
-    const [graduationYear, setGraduationYear] = useState('');
     const [desiredMajors, setDesiredMajors] = useState('');
 
     // Mentor State
     const [mentorFirstName, setMentorFirstName] = useState('');
     const [mentorLastName, setMentorLastName] = useState('');
-    const [currentProfession, setCurrentProfession] = useState('');
-    const [industry, setIndustry] = useState('');
+    const [degree, setDegree] = useState('');
+    const [collegeName, setCollegeName] = useState('');
+    const [currentYear, setCurrentYear] = useState('');
     const [yearsOfExperience, setYearsOfExperience] = useState('');
 
     const router = useRouter();
@@ -51,7 +51,6 @@ const UserDetailsComponent = () => {
                 email: user.email,
                 userType: 'mentee',
                 studentType,
-                graduationYear: parseInt(graduationYear),
                 desiredMajors,
                 createdAt: new Date(),
                 profileCompleted: true
@@ -78,11 +77,15 @@ const UserDetailsComponent = () => {
                 lastName: mentorLastName,
                 email: user.email,
                 userType: 'mentor',
-                currentProfession,
-                industry,
-                yearsOfExperience: parseInt(yearsOfExperience),
+                degree,
+                collegeName,
+                currentYear: parseInt(currentYear, 10),
                 createdAt: new Date(),
-                profileCompleted: true
+                profileCompleted: true,
+                reviews: 0,
+                reviews_arr: [],
+                rating: 0,
+                sessions: 0
             });
 
             router.push('/searchMentors');
@@ -91,13 +94,7 @@ const UserDetailsComponent = () => {
         }
     };
 
-    // Generate an array of years for graduation year dropdown
-    const currentYear = new Date().getFullYear();
-    const graduationYears = Array.from(
-        { length: 10 },
-        (_, i) => (currentYear + i).toString()
-    );
-
+    
     return (
         <div className="flex h-screen items-center justify-center bg-gray-50 p-4">
             <div className="w-full max-w-lg bg-white shadow-md rounded-lg p-8">
@@ -145,22 +142,7 @@ const UserDetailsComponent = () => {
                                 </SelectContent>
                             </Select>
 
-                            <Select
-                                value={graduationYear}
-                                onValueChange={setGraduationYear}
-                                required
-                            >
-                                <SelectTrigger>
-                                    <SelectValue placeholder="Expected Graduation Year" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    {graduationYears.map(year => (
-                                        <SelectItem key={year} value={year}>
-                                            {year}
-                                        </SelectItem>
-                                    ))}
-                                </SelectContent>
-                            </Select>
+                    
 
                             <Input
                                 type="text"
@@ -200,31 +182,30 @@ const UserDetailsComponent = () => {
 
                             <Input
                                 type="text"
-                                value={currentProfession}
-                                onChange={(e) => setCurrentProfession(e.target.value)}
-                                placeholder="Current Profession"
+                                value={degree}
+                                onChange={(e) => setDegree(e.target.value)}
+                                placeholder="Degree"
                                 required
                             />
 
-                            <Select
-                                value={industry}
-                                onValueChange={setIndustry}
+                            <Input
+                                type="text"
+                                value={collegeName}
+                                onChange={(e) => setCollegeName(e.target.value)}
+                                placeholder="College Name"
                                 required
-                            >
-                                <SelectTrigger>
-                                    <SelectValue placeholder="Industry" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="technology">Technology</SelectItem>
-                                    <SelectItem value="finance">Finance</SelectItem>
-                                    <SelectItem value="healthcare">Healthcare</SelectItem>
-                                    <SelectItem value="education">Education</SelectItem>
-                                    <SelectItem value="engineering">Engineering</SelectItem>
-                                    <SelectItem value="other">Other</SelectItem>
-                                </SelectContent>
-                            </Select>
+                            />
 
-                            <Select
+                            <Input
+                                type="number"
+                                value={currentYear}
+                                onChange={(e) => setCurrentYear(e.target.value)}
+                                placeholder="Current year in college"
+                                required
+                            />
+
+
+                            {/* <Select
                                 value={yearsOfExperience}
                                 onValueChange={setYearsOfExperience}
                                 required
@@ -239,7 +220,7 @@ const UserDetailsComponent = () => {
                                         </SelectItem>
                                     ))}
                                 </SelectContent>
-                            </Select>
+                            </Select> */}
 
                             <Button type="submit" className="w-full">
                                 Complete Mentor Profile
