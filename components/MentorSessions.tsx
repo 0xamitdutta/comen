@@ -19,7 +19,7 @@ interface Session {
 }
 
 
-const BookingCard = ({ name, year, institution, department, date, time, isUpcoming }) => (
+const BookingCard = ({ name, year, institution, department, date, time, isUpcoming } : Session) => (
     <Card className="mb-4">
         <CardContent className="p-6">
             <div className="flex items-start justify-between">
