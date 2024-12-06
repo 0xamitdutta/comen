@@ -10,7 +10,7 @@ const successPaths = [
     { title: "Abroad Studies", icon: PlaneLanding },
 ];
 
-const SuccessPathItem = ({ title, icon: Icon }) => (
+const SuccessPathItem = ({ title, icon: Icon} : {title: string, icon: any}) => (
     <Card className="flex flex-col items-center p-4 transition-all hover:shadow-lg">
         <Icon className="w-12 h-12 mb-2 text-gray-700" />
         <CardContent className="text-center">
