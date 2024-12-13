@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -11,9 +11,13 @@ import {
     SelectValue
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Combobox } from "@/components/ui/combobox";
 import { useRouter } from 'next/navigation';
 import { doc, setDoc, getFirestore } from 'firebase/firestore';
 import { auth } from '@/lib/firebase';
+// HIGHLIGHT START
+import universities from '@/data/universities.json'; // Import the universities JSON
+// HIGHLIGHT END
 
 const UserDetailsComponent = () => {
     const [activeTab, setActiveTab] = useState('mentee');
@@ -29,11 +33,24 @@ const UserDetailsComponent = () => {
     const [mentorFirstName, setMentorFirstName] = useState('');
     const [mentorLastName, setMentorLastName] = useState('');
     const [degree, setDegree] = useState('');
+    // HIGHLIGHT START
     const [collegeName, setCollegeName] = useState('');
+    const [collegeSearchTerm, setCollegeSearchTerm] = useState('');
+    // HIGHLIGHT END
+
     const [currentYear, setCurrentYear] = useState('');
-    const [yearsOfExperience, setYearsOfExperience] = useState('');
 
     const router = useRouter();
+
+    // HIGHLIGHT START
+    // Memoized filtered universities based on search term
+    const filteredUniversities = useMemo(() => {
+        if (!collegeSearchTerm) return universities;
+        return universities.filter(uni => 
+            uni.name.toLowerCase().includes(collegeSearchTerm.toLowerCase())
+        ).slice(0, 10); // Limit to 10 results
+    }, [collegeSearchTerm]);
+    // HIGHLIGHT END
 
     const handleSubmitMenteeDetails = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -52,6 +69,9 @@ const UserDetailsComponent = () => {
                 userType: 'mentee',
                 studentType,
                 desiredMajors,
+                // HIGHLIGHT START
+                collegeName, // Add this back with the new combobox selection
+                // HIGHLIGHT END
                 createdAt: new Date(),
                 profileCompleted: true
             });
@@ -78,7 +98,9 @@ const UserDetailsComponent = () => {
                 email: user.email,
                 userType: 'mentor',
                 degree,
-                collegeName,
+                // HIGHLIGHT START
+                collegeName, // Update to use the new combobox selection
+                // HIGHLIGHT END
                 currentYear: parseInt(currentYear, 10),
                 createdAt: new Date(),
                 profileCompleted: true,
@@ -104,11 +126,13 @@ const UserDetailsComponent = () => {
                         <TabsTrigger value="mentor">I'm a Mentor</TabsTrigger>
                     </TabsList>
 
+                    {/* Mentee Tab Content */}
                     <TabsContent value="mentee">
                         <h2 className="text-2xl font-bold mb-6 text-center">
                             Mentee Profile
                         </h2>
                         <form onSubmit={handleSubmitMenteeDetails} className="space-y-4">
+                            {/* Existing first name and last name inputs */}
                             <div className="grid grid-cols-2 gap-4">
                                 <Input
                                     type="text"
@@ -126,6 +150,7 @@ const UserDetailsComponent = () => {
                                 />
                             </div>
 
+                            {/* Existing student type select */}
                             <Select
                                 value={studentType}
                                 onValueChange={setStudentType}
@@ -142,8 +167,6 @@ const UserDetailsComponent = () => {
                                 </SelectContent>
                             </Select>
 
-                    
-
                             <Input
                                 type="text"
                                 value={desiredMajors}
@@ -152,12 +175,25 @@ const UserDetailsComponent = () => {
                                 required
                             />
 
+                            {/* HIGHLIGHT START */}
+                            <Combobox 
+                                options={universities.map(uni => ({
+                                    value: uni.name,
+                                    label: `${uni.name} (${uni.country})`
+                                }))}
+                                value={collegeName}
+                                onChange={setCollegeName}
+                                placeholder="Select College"
+                            />
+                            {/* HIGHLIGHT END */}
+
                             <Button type="submit" className="w-full">
                                 Complete Mentee Profile
                             </Button>
                         </form>
                     </TabsContent>
 
+                    {/* Mentor Tab Content */}
                     <TabsContent value="mentor">
                         <h2 className="text-2xl font-bold mb-6 text-center">
                             Mentor Profile
@@ -188,13 +224,17 @@ const UserDetailsComponent = () => {
                                 required
                             />
 
-                            <Input
-                                type="text"
+                            {/* HIGHLIGHT START */}
+                            <Combobox 
+                                options={universities.map(uni => ({
+                                    value: uni.name,
+                                    label: `${uni.name} (${uni.country})`
+                                }))}
                                 value={collegeName}
-                                onChange={(e) => setCollegeName(e.target.value)}
-                                placeholder="College Name"
-                                required
+                                onChange={setCollegeName}
+                                placeholder="Select College"
                             />
+                            {/* HIGHLIGHT END */}
 
                             <Input
                                 type="number"
@@ -203,24 +243,6 @@ const UserDetailsComponent = () => {
                                 placeholder="Current year in college"
                                 required
                             />
-
-
-                            {/* <Select
-                                value={yearsOfExperience}
-                                onValueChange={setYearsOfExperience}
-                                required
-                            >
-                                <SelectTrigger>
-                                    <SelectValue placeholder="Years of Experience" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    {['0-2', '3-5', '6-10', '11-15', '15+'].map(range => (
-                                        <SelectItem key={range} value={range}>
-                                            {range} years
-                                        </SelectItem>
-                                    ))}
-                                </SelectContent>
-                            </Select> */}
 
                             <Button type="submit" className="w-full">
                                 Complete Mentor Profile
