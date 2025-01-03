@@ -17,6 +17,7 @@ import { doc, setDoc, getFirestore } from 'firebase/firestore';
 import { auth } from '@/lib/firebase';
 // HIGHLIGHT START
 import universities from '@/data/universities.json'; // Import the universities JSON
+import degrees_with_cat from '@/data/degrees_with_cat.json'
 // HIGHLIGHT END
 
 const UserDetailsComponent = () => {
@@ -32,6 +33,7 @@ const UserDetailsComponent = () => {
     // Mentor State
     const [mentorFirstName, setMentorFirstName] = useState('');
     const [mentorLastName, setMentorLastName] = useState('');
+    const [degreeCat, setDegreeCat] = useState('');
     const [degree, setDegree] = useState('');
     // HIGHLIGHT START
     const [collegeName, setCollegeName] = useState('');
@@ -166,13 +168,24 @@ const UserDetailsComponent = () => {
                                     <SelectItem value="international">International Student</SelectItem>
                                 </SelectContent>
                             </Select>
+                            
 
-                            <Input
+                            {/* <Input
                                 type="text"
                                 value={desiredMajors}
                                 onChange={(e) => setDesiredMajors(e.target.value)}
                                 placeholder="Desired Majors/Fields of Interest"
                                 required
+                            /> */}
+
+                            <Combobox
+                                options={degrees_with_cat.map(cat => ({
+                                    value: cat.category,
+                                    label: `${cat.category}`
+                                }))}
+                                value={desiredMajors}
+                                onChange={setDesiredMajors}
+                                placeholder="Desired Majors/Fields of Interest"
                             />
 
                             {/* HIGHLIGHT START */}
@@ -215,13 +228,31 @@ const UserDetailsComponent = () => {
                                     required
                                 />
                             </div>
-
-                            <Input
+                            <Combobox 
+                                options={degrees_with_cat.map(cat => ({
+                                    value: cat.category,
+                                    label: `${cat.category}`
+                                }))}
+                                value={degreeCat}
+                                onChange={setDegreeCat}
+                                placeholder="Select degree category"
+                            />
+                            {/* <Input
                                 type="text"
                                 value={degree}
                                 onChange={(e) => setDegree(e.target.value)}
                                 placeholder="Degree"
                                 required
+                            /> */}
+                            <Combobox
+                                options={degrees_with_cat
+                                    .find(cat => cat.category === degreeCat)?.degrees.map(degree => ({
+                                        value: degree,
+                                        label: degree
+                                    })) || []}
+                                value={degree}
+                                onChange={setDegree}
+                                placeholder="Select degree"
                             />
 
                             {/* HIGHLIGHT START */}
