@@ -1,0 +1,205 @@
+[
+    {
+      "category": "Arts and Humanities",
+      "degrees": [
+        "Bachelor of Arts (BA)",
+        "Master of Arts (MA)",
+        "Doctor of Philosophy (PhD) in Humanities",
+        "English Literature",
+        "History",
+        "Philosophy",
+        "Psychology",
+        "Sociology",
+        "Political Science",
+        "Anthropology",
+        "Fine Arts",
+        "Linguistics",
+        "Religious Studies",
+        "Cultural Studies",
+        "Creative Writing",
+        "Music",
+        "Theater Arts",
+        "Film Studies",
+        "Art History",
+        "Languages (e.g., French, Spanish, Mandarin)"
+      ]
+    },
+    {
+      "category": "Sciences",
+      "degrees": [
+        "Bachelor of Science (BSc)",
+        "Master of Science (MSc)",
+        "Doctor of Philosophy (PhD) in Science",
+        "Mathematics",
+        "Physics",
+        "Chemistry",
+        "Biology",
+        "Environmental Science",
+        "Biochemistry",
+        "Geology",
+        "Astronomy",
+        "Statistics",
+        "Forensic Science",
+        "Marine Biology",
+        "Zoology",
+        "Botany",
+        "Microbiology"
+      ]
+    },
+    {
+      "category": "Engineering and Technology",
+      "degrees": [
+        "Bachelor of Engineering (BE)",
+        "Bachelor of Technology (BTech)",
+        "Master of Engineering (ME)",
+        "Master of Technology (MTech)",
+        "Doctor of Philosophy (PhD) in Engineering",
+        "Civil Engineering",
+        "Mechanical Engineering",
+        "Electrical Engineering",
+        "Electronics and Communication Engineering",
+        "Computer Science and Engineering",
+        "Information Technology",
+        "Chemical Engineering",
+        "Aerospace Engineering",
+        "Biomedical Engineering",
+        "Environmental Engineering",
+        "Robotics Engineering",
+        "Data Science and AI",
+        "Automotive Engineering",
+        "Mechatronics"
+      ]
+    },
+    {
+      "category": "Business and Management",
+      "degrees": [
+        "Bachelor of Business Administration (BBA)",
+        "Master of Business Administration (MBA)",
+        "Doctor of Business Administration (DBA)",
+        "Marketing",
+        "Finance",
+        "Human Resources",
+        "Operations Management",
+        "International Business",
+        "Entrepreneurship",
+        "Business Analytics",
+        "Supply Chain Management",
+        "Chartered Accountant (CA)",
+        "Chartered Financial Analyst (CFA)"
+      ]
+    },
+    {
+      "category": "Medical and Health Sciences",
+      "degrees": [
+        "Bachelor of Medicine, Bachelor of Surgery (MBBS)",
+        "Bachelor of Dental Surgery (BDS)",
+        "Bachelor of Pharmacy (BPharm)",
+        "Bachelor of Physiotherapy (BPT)",
+        "Bachelor of Science in Nursing (BSc Nursing)",
+        "Bachelor of Veterinary Science (BVSc)",
+        "Bachelor of Ayurvedic Medicine and Surgery (BAMS)",
+        "Bachelor of Homeopathic Medicine and Surgery (BHMS)",
+        "Bachelor of Unani Medicine and Surgery (BUMS)",
+        "Bachelor of Occupational Therapy (BOT)",
+        "Doctor of Medicine (MD)",
+        "Master of Surgery (MS)",
+        "Master of Pharmacy (MPharm)",
+        "Master of Physiotherapy (MPT)",
+        "Master of Public Health (MPH)",
+        "Doctorate of Medicine (DM)"
+      ]
+    },
+    {
+      "category": "Law",
+      "degrees": [
+        "Bachelor of Laws (LLB)",
+        "Master of Laws (LLM)",
+        "Doctor of Juridical Science (SJD)",
+        "Integrated BA LLB",
+        "Integrated BBA LLB",
+        "Integrated BSc LLB"
+      ]
+    },
+    {
+      "category": "Education",
+      "degrees": [
+        "Bachelor of Education (BEd)",
+        "Master of Education (MEd)",
+        "Doctor of Education (EdD)",
+        "Diploma in Early Childhood Education"
+      ]
+    },
+    {
+      "category": "Architecture and Design",
+      "degrees": [
+        "Bachelor of Architecture (BArch)",
+        "Bachelor of Design (BDes)",
+        "Master of Architecture (MArch)",
+        "Master of Design (MDes)",
+        "Fashion Design",
+        "Interior Design",
+        "Product Design",
+        "Graphic Design",
+        "Industrial Design",
+        "Animation"
+      ]
+    },
+    {
+      "category": "Information Technology",
+      "degrees": [
+        "Bachelor of Computer Applications (BCA)",
+        "Master of Computer Applications (MCA)",
+        "Bachelor of Science in Information Technology (BSc IT)",
+        "Master of Science in Information Technology (MSc IT)"
+      ]
+    },
+    {
+      "category": "Media and Communication",
+      "degrees": [
+        "Bachelor of Journalism and Mass Communication (BJMC)",
+        "Bachelor of Film and Television Production",
+        "Master of Journalism and Mass Communication (MJMC)",
+        "Master of Public Relations (MPR)"
+      ]
+    },
+    {
+      "category": "Hospitality and Tourism",
+      "degrees": [
+        "Bachelor of Hotel Management (BHM)",
+        "Bachelor of Tourism and Travel Management (BTTM)",
+        "Master of Hospitality Management (MHM)"
+      ]
+    },
+    {
+      "category": "Agriculture and Forestry",
+      "degrees": [
+        "Bachelor of Science in Agriculture (BSc Ag)",
+        "Bachelor of Science in Forestry (BSc Forestry)",
+        "Master of Science in Agriculture (MSc Ag)",
+        "Master of Science in Forestry (MSc Forestry)"
+      ]
+    },
+    {
+      "category": "Vocational and Applied Degrees",
+      "degrees": [
+        "Diploma in Culinary Arts",
+        "Diploma in Automotive Technology",
+        "Diploma in Paramedics",
+        "Diploma in Beauty and Wellness",
+        "Associate Degree in Healthcare Assistant",
+        "Associate Degree in Electrical Technician",
+        "Associate Degree in Graphic Design"
+      ]
+    },
+    {
+      "category": "Interdisciplinary Programs",
+      "degrees": [
+        "Liberal Arts Degrees",
+        "Environmental Studies",
+        "Data Science",
+        "Public Policy",
+        "Sustainability Studies"
+      ]
+    }
+  ]
+  
