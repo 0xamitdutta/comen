@@ -1,6 +1,7 @@
 import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from './ui/button';
 import { Pencil } from "lucide-react";
 
 const ProfileHeader = () => {
@@ -23,9 +24,14 @@ const ProfileHeader = () => {
                     <h2 className="text-2xl font-bold mb-2">Puja Mehra</h2>
                     <p className="text-gray-600">St Francis School | 12th std</p>
                 </div>
-                <button className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
-                    <Pencil className="w-5 h-5 text-gray-600" />
-                </button>
+                <div className="flex items-center gap-4">
+                    <Button variant="default" className="bg-indigo-500 hover:bg-indigo-600">
+                        Book Session
+                    </Button>
+                    <button className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+                        <Pencil className="w-5 h-5 text-gray-600" />
+                    </button>
+                </div>
             </CardContent>
         </Card>
     );

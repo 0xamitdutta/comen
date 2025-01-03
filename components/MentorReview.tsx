@@ -67,22 +67,26 @@ const MentorCard = ({ review }: { review: MentorReview }) => (
     </Card>
 );
 
-const MentorReview = ({ reviews, categories }: { reviews: MentorReview[], categories: string[] }) => {
+const MentorReview = ({ reviews, categories, isHeading }: { reviews: MentorReview[], categories: string[], isHeading: boolean }) => {
     return (
         <div className="container mx-auto px-4 py-8" id="testimonials">
-            <h1 className="text-3xl font-bold text-center mb-6">We value your opinion</h1>
+            {
+                isHeading && <div>
+                    <h1 className="text-3xl font-bold text-center mb-6">We value your opinion</h1>
 
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
-                {categories.map((category, index) => (
-                    <Button
-                        key={index}
-                        variant={index === 0 ? "default" : "outline"}
-                        className={index === 0 ? "bg-blue-500 hover:bg-blue-600" : ""}
-                    >
-                        {category}
-                    </Button>
-                ))}
-            </div>
+                    <div className="flex flex-wrap justify-center gap-2 mb-8">
+                        {categories.map((category, index) => (
+                            <Button
+                                key={index}
+                                variant={index === 0 ? "default" : "outline"}
+                                className={index === 0 ? "bg-blue-500 hover:bg-blue-600" : ""}
+                            >
+                                {category}
+                            </Button>
+                        ))}
+                    </div>
+                </div>
+            }
 
             <div className="flex space-x-4 pb-4">
                 <Carousel

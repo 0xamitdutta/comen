@@ -32,6 +32,7 @@ const BookingCard = ({ name, year, institution, department, date, time, isUpcomi
                         <h3 className="font-semibold">{name}</h3>
                         <p className="text-sm text-gray-500">{year}, {institution}</p>
                         <p className="text-sm text-gray-500">{department}</p>
+                         
                     </div>
                 </div>
                 <Button variant="outline">View profile</Button>

@@ -25,7 +25,7 @@ export default function Home() {
         <MentorShowcase mentors={mentors}/>
         <SignupComponent />
         <Stats />
-        <MentorReview categories={categories} reviews={reviews} />
+        <MentorReview categories={categories} reviews={reviews} isHeading={true} />
         <BecomeMentor />
         <Faq />
         <Footer />
